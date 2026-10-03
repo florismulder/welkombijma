@@ -1,4 +1,5 @@
 <meta charset="utf-8">
+<meta name="format-detection" content="telephone=no, email=no, address=no, date=no">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>MA Studentenmenu</title>
 <style>
@@ -84,9 +85,10 @@ details[open] summary::after{content:"\2212"}
 .contacten li{display:flex;flex-direction:column;align-items:stretch;gap:12px;border-top:1px solid var(--rule);padding:16px 0}
 .contacten li:last-child{border-bottom:1px solid var(--rule)}
 .contacten .w{min-width:0}
+.contacten a,.contacten .w *{text-decoration:none!important}
 .contacten .w b{display:block;font-size:19px;line-height:1.25}
 .contacten .w span{display:block;font-size:17px;color:var(--muted)}
-.contacten code{display:block;font:inherit;font-size:18px;font-weight:700;user-select:all;word-break:break-all;margin-block:2px}
+.contacten code{display:block;text-decoration:none;color:inherit;-webkit-text-decoration:none;font:inherit;font-size:18px;font-weight:700;user-select:all;overflow-wrap:anywhere;margin-block:2px}
 .kopie{font:inherit;font-size:17px;font-weight:700;background:var(--tile);color:var(--fg);border:2px solid var(--line);
   border-radius:var(--r);padding:8px 16px;min-height:52px;cursor:pointer}
 .kopie:active,.kopie:hover{background:var(--accent);color:var(--on-accent)}
