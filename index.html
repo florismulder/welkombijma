@@ -97,6 +97,9 @@ details[open] summary::after{content:"\2212"}
 footer{font-size:16px;color:var(--muted)}
 footer a{color:var(--fg)}
 
+.boven{font:inherit;font-size:18px;font-weight:700;min-height:60px;width:100%;background:var(--tile);color:var(--fg);border:2px solid var(--line);border-radius:var(--r);cursor:pointer;-webkit-appearance:none;appearance:none}
+.boven:active{background:var(--accent);color:var(--on-accent)}
+
 .bar{position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:2px solid var(--line);
   padding:12px 20px calc(12px + env(safe-area-inset-bottom,0px))}
 .bar div{max-width:640px;margin-inline:auto;display:flex;gap:12px}
@@ -148,6 +151,8 @@ footer a{color:var(--fg)}
   </section>
 
   <p class="leeg" id="leeg" hidden>Niets gevonden. Probeer een ander woord.</p>
+
+  <button type="button" class="boven" id="boven">Terug naar boven</button>
 
   <footer id="voet"></footer>
 </div>
@@ -253,7 +258,7 @@ const DATA = {
     {w:"Inloggen lukt niet",m:"servicepunt@ma-web.nl",x:"Stuur nooit je wachtwoord per mail"},
     {w:"Inschrijving, adres of DUO",m:"studentenadministratie@ma-web.nl"},
     {w:"Aangepaste examinering of hoger niveau",m:"examencommissie@ma-web.nl"},
-    {w:"Ik voel me niet veilig of zit ergens mee",m:"vertrouwenspersoon@ma-web.nl",x:"Kirsten en Sander"},
+    {w:"Ik voel me niet veilig of zit ergens mee",m:"vertrouwenspersoon@ma-web.nl"},
     {w:"Onveilig op stage",m:"stageveiligheid@ma-web.nl"},
     {w:"Klacht indienen",m:"klachtencoordinator@ma-web.nl"},
     {w:"Rekeningen en vergoeding",m:"financiele.administratie@ma-web.nl"},
@@ -342,6 +347,7 @@ const DATA = {
 
   // Balk onderaan
   $("ziek").href=DATA.ziekUrl;
+  $("boven").addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});
   $("hulp-knop").addEventListener("click",function(){
     $("q").value=""; zoek();
     var g=$("g-hulp"); g.hidden=false; g.open=true; g.scrollIntoView(); 
